@@ -4,3 +4,8 @@ This is my first angular ionic app
 ```shell
 npm install
 ```
+
+## Run Application
+```shell
+ionic s
+```
