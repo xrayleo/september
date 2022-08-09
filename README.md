@@ -1,6 +1,6 @@
 # september
 This is my first angular ionic app
-## Install dependencies
+## Install Dependencies
 ```shell
 npm install
 ```
