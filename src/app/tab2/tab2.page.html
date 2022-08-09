@@ -1,17 +1,42 @@
-<ion-header [translucent]="true">
+<ion-header collapse="condense">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-searchbar placeholder="Filter Shopping"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <!-- 下拉刷新请求数据 -->
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <!-- [routerLink]="['/detail',{id : 1278}]" -->
+  <ion-item
+    *ngFor="let item of userInfo"
+    lines="full"
+    detail
+    button
+    (click)="goDetails(item.id)"
+  >
+    <img
+      src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fupload-images.jianshu.io%2Fupload_images%2F23729353-4803e87125724034.jpg&refer=http%3A%2F%2Fupload-images.jianshu.io&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662274982&t=85453e709b11f557abf1126bc104d296"
+      alt=""
+      slot="start"
+      style="width: 100px; height: 70px"
+    />
+    <ion-label>
+      <h4>{{ item.name }}</h4>
+      <p style="color: red">¥{{ item.age }}</p>
+    </ion-label>
+  </ion-item>
+  <!-- 滑动到最底部自动请求数据 -->
+  <!-- [disabled]="false"表示此时需要继续加载数据, 为true表示已经加载完所有数据了 -->
+  <ion-infinite-scroll
+    threshold="25%"
+    [disabled]="false"
+    position="bottom"
+    (ionInfinite)="loadData($event)"
+  >
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="加载中">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

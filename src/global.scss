@@ -24,3 +24,12 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+@import 'swiper/scss';
+// 如果引入该css,则不要引入其它的模块css,因为该css包含了其他模块
+// @import 'swiper/css/bundle';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+@import 'swiper/scss/autoplay';
+

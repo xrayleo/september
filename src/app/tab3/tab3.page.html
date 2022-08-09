@@ -1,17 +1,41 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
+    <ion-title>我的购物车</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+<ion-content class="ion-padding" *ngIf="res">
+  <ion-card>
+    <ion-item *ngFor="let item of res.products">
+      <ion-grid fixed>
+        <ion-row style="padding: 5px">
+          <ion-col>
+            <ion-text style="font-size: 14px; color: #666"
+              >{{ item.title }}</ion-text
+            >
+          </ion-col>
+          <ion-col
+            style="display: flex; justify-content: center; align-items: center"
+          >
+            <ion-text color="danger"> ¥{{ item.price }} </ion-text>
+          </ion-col>
+          <ion-col
+            size="6"
+            style="display: flex; justify-content: center; align-items: center"
+          >
+            <ion-button fill="clear">
+              <ion-icon name="add-circle"></ion-icon>
+            </ion-button>
+            {{ item.count }}
+            <ion-button fill="clear">
+              <ion-icon name="add-circle"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-card>
+  <div style="display: flex; justify-content: flex-end">
+    <ion-button color="success">去结算</ion-button>
+  </div>
 </ion-content>

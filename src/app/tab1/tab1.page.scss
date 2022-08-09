@@ -1,0 +1,25 @@
+.logo{
+    width: 100px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ion-card{
+    padding: 0;
+    margin: 0;
+}
+
+ion-card-subtitle,ion-card-title{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+ion-card-content>ion-button{
+    display: block;
+}
+ion-card>img{
+    height: 120px;
+}
