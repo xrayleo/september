@@ -1,0 +1,183 @@
+//  you may change this size
+$path: '../';
+$version: 1;
+$langs: 'zh'; //'en','zh'
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$hd-width: 1300px;
+
+@mixin phone {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) and (max-width: #{$hd-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin hd {
+  @media (min-width: #{$hd-width}) {
+    @content;
+  }
+}
+
+%clearfix {
+  *zoom: 1;
+
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin setTransi($property:all, $duration:.3s, $timing_function:linear, $delay:0s) {
+  transition: $property $duration $timing_function $delay;
+  -webkit-transition: $property $duration $timing_function $delay;
+  -moz-transition: $property $duration $timing_function $delay;
+  -o-transition: $property $duration $timing_function $delay;
+}
+
+@mixin setTransf($settings) {
+  transform: $settings;
+  -webkit-transform: $settings;
+  -moz-transform: $settings;
+  -o-transform: $settings;
+}
+
+@mixin setPos($pos, $width:auto, $height:auto, $top:auto, $left:auto, $center:false) {
+  position: $pos;
+  width: $width;
+  height: $height;
+  @if $center {
+    top: 50%;
+    left: 50%;
+    @include setTransf(translate(-50%,-50%));
+  }
+  @else {
+    top: $top;
+    left: $left;
+  }
+}
+
+@mixin Pos($width, $height, $top:auto, $left:auto) {
+  width: $width;
+  height: $height;
+  top: $top;
+  left: $left;
+}
+
+@mixin background-img($name) {
+  background-image: url("#{$path}#{$name}?v#{$version}");
+}
+
+@mixin bg-color($color) {
+  background-color: $color;
+}
+
+@mixin bg-setting($bg-size:cover,$bg-repeat:no-repeat,$bg-position:center center) {
+  background-size: $bg-size;
+  background-repeat: $bg-repeat;
+  background-position: $bg-position;
+}
+
+@mixin src($name) {
+  src: url("#{$path}#{$name}?v#{$version}");
+}
+
+@mixin setFlex($justify-content, $align-items, $flex-flow:row nowrap) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-flow: $flex-flow;
+}
+
+@mixin setWH($width, $height:fit-content) {
+  width: $width;
+  height: $height;
+}
+
+@mixin hide{
+  display: none;
+}
+
+@mixin show{
+  display: block;
+}
+
+//direction: top right bottom left 
+@mixin icon-arrow($translate, $direction:bottom, $top:0, $left: 0, $color:#FFF, $width:5px, $height:5px) {
+  &:after{
+    content: '';
+    width: $width;
+    height: $height;
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform-origin: center center;
+    border-top: 2px solid $color;
+    border-left: 2px solid $color;
+    @include setTransi();
+    @if $direction == top{
+      @include setTransf($translate rotate(45deg));
+    }
+    @else if $direction == right{
+      @include setTransf($translate rotate(135deg));
+    }
+    @else if $direction == bottom{
+      @include setTransf($translate rotate(-135deg));
+    }
+    @else if $direction == left{
+      @include setTransf($translate rotate(-45deg));
+    }
+  }
+}
+
+@mixin box-shadow($settings:0 2px 6px 1px #ccc){
+  box-shadow: $settings;
+}
+
+@mixin setColumn($quantity:2){
+  column-count: $quantity;
+}
+
+@mixin setColumnItem(){
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid-column;
+}
+
+@mixin noSelect() {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+
+@mixin lineClap($count: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $count;
+  overflow: hidden;
+}
+
+@mixin display($display) {
+  display: $display;
+}
+
+@mixin flex($direct: row, $wrap: wrap, $jc: flex-start, $ai: flex-start){
+  display: flex;
+  flex-flow: $direct $wrap;
+  justify-content: $jc;
+  align-items: $ai;
+}
