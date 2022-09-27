@@ -2,8 +2,10 @@ import React,{ Fragment,useState } from 'react'
 import SwipeableDrawer from '@mui/material/SwipeableDrawer'
 import { Box,List,ListItem,ListItemButton,ListItemText,Button,Container,Typography,styled } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
-import languageImage from '@assets/images/language_en.svg'
+import en_image from '@assets/images/language_en.svg'
+import ind_image from '@assets/images/language_ind.svg'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right'
 type MenuConfig = {
@@ -17,15 +19,29 @@ interface DrawerArgument {
 }
 
 const SwipeableTemporaryDrawer = (props: {isOpenDrawer: boolean, direction: Anchor, onDrawer: any}) => {
+
+    //国际化
+    const { t, i18n } = useTranslation();
+    
     // console.log(props);
     const navigator = useNavigate();
 
     //页面路由
-    const menuConfig: MenuConfig[] = [
-        { text: 'Home', url: '/'},
-        { text: 'About', url: '/about'},
-        { text: 'Help/Contact Us', url: '/help'},
-    ]
+    // const menuConfig: MenuConfig[] = [
+    //     { text: 'Home', url: '/'},
+    //     { text: 'About', url: '/about'},
+    //     { text: 'Help/Contact Us', url: '/help'},
+    // ]
+    // console.log( t("slideNav"));
+    const menuConfig: MenuConfig[] = t("slideNav");
+    const toggleLanguage = () => {
+        if(i18n.language === "en"){
+            i18n.changeLanguage('ina');
+        }else{
+            i18n.changeLanguage('en');
+        }
+        props.onDrawer(false);
+    }
 
     // console.log(props);
     //自定义的按钮
@@ -94,11 +110,9 @@ const SwipeableTemporaryDrawer = (props: {isOpenDrawer: boolean, direction: Anch
                 </List>
             </div>
             <Container className="w-full" component='div' style={{padding: '8px 16px'}}>
-                <LanguageButton variant="contained">
-                    <img src={languageImage} alt="" />
-                    <Typography component='span' sx={{paddingLeft: '8px'}}>
-                        EN
-                    </Typography>
+                <LanguageButton variant="contained" onClick={()=>toggleLanguage()}>
+                    <img src={ i18n.language === 'en' ?  ind_image : en_image} alt="" />
+                    <Typography component='span' sx={{paddingLeft: '8px'}}>{ i18n.language === 'en'? "INA" : "EN" }</Typography>
                 </LanguageButton>
             </Container>
         </Box>

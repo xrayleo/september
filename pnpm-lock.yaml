@@ -17,6 +17,7 @@ specifiers:
   autoprefixer: ^10.4.12
   axios: ^0.27.2
   i18next: ^21.9.2
+  i18next-browser-languagedetector: ^6.1.5
   i18next-http-backend: ^1.4.4
   immutable: ^4.1.0
   postcss: ^8.4.16
@@ -40,6 +41,7 @@ dependencies:
   '@mui/material': 5.10.6_af5ln35zuaotaffazii6n6bke4
   axios: 0.27.2
   i18next: 21.9.2
+  i18next-browser-languagedetector: 6.1.5
   i18next-http-backend: 1.4.4
   immutable: 4.1.0
   react: 18.2.0
@@ -1543,6 +1545,12 @@ packages:
     resolution: {integrity: sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==}
     dependencies:
       void-elements: 3.1.0
+    dev: false
+
+  /i18next-browser-languagedetector/6.1.5:
+    resolution: {integrity: sha512-11t7b39oKeZe4uyMxLSPnfw28BCPNLZgUk7zyufex0zKXZ+Bv+JnmJgoB+IfQLZwDt1d71PM8vwBX1NCgliY3g==}
+    dependencies:
+      '@babel/runtime': 7.19.0
     dev: false
 
   /i18next-http-backend/1.4.4:
