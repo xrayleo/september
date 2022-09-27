@@ -5,10 +5,17 @@
   height: 26vh;
 }
 .footer{
-  background-image: url('../../assets/images/Bottom.png');
-  background-repeat: no-repeat;
+  background: url('../../assets/images/Bottom.png') bottom no-repeat;
   background-size: cover;
   height: 20vh;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+@media (max-width: #{768px}) {
+  .footer{
+    position: initial;
+  }
 }
 .tip-link{
   color: #0065cc;
