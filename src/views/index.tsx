@@ -29,10 +29,10 @@ function App() {
             edge="start" 
             color="inherit" 
             aria-label="menu" 
-            sx={{ mr: 2,color: 'rgb(138, 184, 25)',position: 'absolute',left: '20px',top: '13,5px' }} 
+            sx={{ mr: 2,color: 'rgb(138, 184, 25)',position: 'absolute',left: '20px',top: '13,5px', cursor: 'pointer'}} 
             onClick={ showDrawer }
           >
-              <MenuIcon/>
+            <MenuIcon/>
           </IconButton>
           <Typography component="div" variant="h6" sx={{ display: 'flex', width: '110px',justifyContent: 'center', cursor: 'pointer' }}>
             <img src={logo} alt="logo" className="w-full" />

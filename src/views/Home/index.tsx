@@ -1,5 +1,5 @@
-import { useState, Suspense,useEffect } from 'react'
-import { useNavigate,Link } from 'react-router-dom'
+import { useState, Suspense } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Box, Typography, Stack, Button, ButtonGroup, styled } from '@mui/material'
 import './index.scss'
 import banner from '@assets/images/Banner.png'
@@ -21,7 +21,8 @@ interface HomeData{
   tip3End: string,
   termsTip: string,
   primaryButton: string,
-  surveyButton: string
+  surveyButton: string,
+  termsAndConditions: string
 }
 
 function Home() {
@@ -135,7 +136,7 @@ function Home() {
               </ButtonGroup>
               <Typography
                 component="p"
-                sx={{ marginTop: '10px', color: 'rgb(92, 92, 92)', textDecoration: 'underline', fontSize: '1.15rem' }}
+                sx={{ marginTop: '10px', color: 'rgb(92, 92, 92)', textDecoration: 'underline', fontSize: '1.15rem', cursor: 'pointer' }}
                 onClick={() => setIsOpenTerms(true)}
               >
                 {item.termsTip}
@@ -146,7 +147,8 @@ function Home() {
                 <Typography component='span' sx={{ paddingLeft: '8px' }}>{i18n.language === 'en' ? "INA" : "EN"}</Typography>
               </LanguageButton>
               <img src={experian} alt="" style={{ width: '104px', marginTop: '10px' }} />
-            </Stack><Terms isOpenTerms={isOpenTerms} onTerms={setIsOpenTerms}></Terms>
+            </Stack>
+            <Terms isOpenTerms={isOpenTerms} onTerms={setIsOpenTerms} termDetails={item.termsAndConditions}></Terms>
           </Box>
       ))}
     </Suspense>
