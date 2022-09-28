@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import Terms from '@components/terms'
 import { Box, Typography, Stack, Button, ButtonGroup, styled } from '@mui/material'
-import './index.scss'
 import banner from '@assets/images/Banner.png'
 import event from '@assets/images/Event_1.png'
 import experian from '@assets/images/Experian.png'
 import en_image from '@assets/images/language_en.svg'
 import ind_image from '@assets/images/language_ind.svg'
+import './index.scss'
 
 interface HomeData{
   subTitle: string,
@@ -33,12 +33,8 @@ function Home() {
 
   const navigate = useNavigate();
   const [isOpenTerms, setIsOpenTerms] = useState<boolean>(false);
-  // const homeData:HomeData[] = t('home');
-  // console.log(homeData);
   const homeData: HomeData[] = t('home');
 
-
-  // const AppBar = styled(AppBar)``;
   //自定义的按钮
   const CustomButton = styled(Button)({
     boxShadow: 'none',

@@ -18,6 +18,7 @@ export default ({ mode }) => {
                 "@service": resolve(__dirname, "src/service"),
                 "@assets": resolve(__dirname, "src/assets"),
                 "@store": resolve(__dirname, "src/store"),
+                "@interfaces": resolve(__dirname, "src/interfaces"),
             },
         },
         css: {
