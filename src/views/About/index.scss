@@ -33,3 +33,34 @@
     position: absolute;
     left: 20px;   
 }
+.about-html{
+    .contentContainer{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 1.14rem;
+        color: rgb(126, 34, 92);
+        line-height: 1.4rem;
+        span{
+            font-weight: 500;
+        }
+        p{
+            margin-bottom: 16px;
+            &:first-child{
+                margin: 16px 0;
+            }
+        }
+        h3{
+            margin-top: 18.7px;
+            font-size: 1.33rem;
+            font-weight: 700;
+        }
+        a{
+            color: #0065cc;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+    }
+}

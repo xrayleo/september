@@ -28,7 +28,7 @@ function About() {
             <Typography sx={{ padding: '20px 0', color: 'rgb(126, 34, 92)', fontWeight: 'bold',fontSize: '20px'}}>{ item.title }</Typography>
           </Stack>
           <Divider></Divider>
-          <div dangerouslySetInnerHTML={{__html: item.html}}></div>
+          <div dangerouslySetInnerHTML={{__html: item.html}} className="about-html"></div>
         </Box>
       ))}
     </Fragment>
