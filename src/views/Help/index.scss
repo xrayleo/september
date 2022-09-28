@@ -1,6 +1,12 @@
 .help-box{
     min-height: 100vh;
     background-color: #fff6fb;
+    padding-bottom: 5vh;
+}
+@media (max-width: 767px) {
+    .help-box{
+        padding-bottom: 20px;
+    }
 }
 .text-box{
     padding-top: 40px;
@@ -29,4 +35,22 @@
     color: #0065cc;
     font-weight: 700;
     text-decoration: underline;
+}
+.us-html{
+    a{
+        color: #0065cc;
+        font-weight: 700;
+        margin-top: 5px;
+        text-decoration: underline;
+        padding: 0 2px;
+        font-size: 1.33rem;
+        line-height: 1rem;
+    }
+    span{
+        margin-bottom: 0px;
+        text-align: left;
+        color: rgb(126, 34, 92);
+        font-size: 1.33rem;
+        line-height: 1rem;
+    }
 }

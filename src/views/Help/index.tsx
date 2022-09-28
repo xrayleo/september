@@ -21,11 +21,8 @@ interface HelpData {
   tip5: string,
   tip6_1: string,
   tip6_2: string,
-  tip7: string,
-  tip8_1: string,
-  tip8_2: string,
-  tip8_3: string,
-  tip8_4: string
+  tip7: string, 
+  us: string
 }
 
 function Help() {
@@ -37,7 +34,7 @@ function Help() {
     <Fragment>
       {helpData.map((item,index) =>
         (
-          <Box sx={{paddingBottom: '10px'}} className="help-box" key={index}>
+          <Box className="help-box" key={index}>
             <Stack direction='row' justifyContent='center' alignItems='center'>
               <Typography sx={{ padding: '20px 0', color: 'rgb(126, 34, 92)', fontWeight: 'bold',fontSize: '20px'}}>{item.title}</Typography>
             </Stack>
@@ -94,11 +91,8 @@ function Help() {
                 </div>
               </div>
             </div>
-            <div className="text-box pt-8">
-              <span className="text-normal">{ item.tip8_1 }</span>
-              <a href={ item.tip8_2 } className="text-link" target="_blank">&nbsp;{ item.tip8_2 }&nbsp;</a>
-              <span className="text-normal"> { item.tip8_3 } </span>
-              <a href={ item.tip8_4 } className="text-link" target="_blank">&nbsp;{ item.tip8_4 }&nbsp;</a>
+            <div className="text-box pt-8 us-html">
+              <div dangerouslySetInnerHTML={{__html: item.us}}></div>
             </div>
           </Box>
         ))

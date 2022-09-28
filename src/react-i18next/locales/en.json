@@ -47,10 +47,7 @@
             "tip6_1": "1102 Enterprise Building, 228-238",
             "tip6_2": "Queen’s Road Central, Hong Kong",
             "tip7": "Experian",
-            "tip8_1": "Learn more at",
-            "tip8_2": "http://www.experian.com.sg",
-            "tip8_3": "or visit our global content hub at our",
-            "tip8_4": "http://www.experian.com/blogs/news"
+            "us": "<p style='margin-bottom:0;text-align:left'><span>Learn more at</span><a class='contactUs_phone__Dxxpx' href='http://www.experian.com.sg' target='_blank'>http://www.experian.com.sg</a><span>or visit our global content hub at our</span><a class='contactUs_phone__Dxxpx' href='http://www.experian.com/blogs/news' target='_blank'>global news blog</a><span>for the latest news and insights from the Group.</span></p>"
         }
     ]
 }
