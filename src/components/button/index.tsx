@@ -1,7 +1,7 @@
 import { Button,styled } from "@mui/material";
 
 //自定义的按钮
-export const CustomButton = styled(Button)({
+const CustomButton = styled(Button)({
     boxShadow: 'none',
     textTransform: 'none',
     fontSize: 16,
@@ -20,6 +20,7 @@ export const CustomButton = styled(Button)({
     }
 });
 
+//用于切换语言的按钮
 export const LanguageButton = styled(Button)({
     boxShadow: 'none',
     textTransform: 'none',
@@ -38,6 +39,7 @@ export const LanguageButton = styled(Button)({
     }
 });
 
+//未填充的按钮,边框颜色为主题色
 export const OutlinedButton = styled(Button)({
     boxShadow: 'none',
     textTransform: 'none',
@@ -50,3 +52,5 @@ export const OutlinedButton = styled(Button)({
     color: 'rgb(126, 34, 92)',
     borderColor: 'rgb(126, 34, 92) !important'
 })
+
+export default CustomButton

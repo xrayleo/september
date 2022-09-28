@@ -1,13 +1,10 @@
-import './index.scss'
 import { Box, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
+import './index.scss'
 
-function createData(
-  rank: string,
-  name: string
-) {
+function createData( rank: string,name: string ) {
   return { rank, name };
 }
 

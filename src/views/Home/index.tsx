@@ -1,8 +1,9 @@
-import { useState, Suspense } from 'react'
+import { useState,Suspense } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { Box,Typography,Stack,ButtonGroup } from '@mui/material'
+import CustomButton,{ LanguageButton,OutlinedButton } from '@/components/button'
 import Terms from '@components/terms'
-import { Box, Typography, Stack, Button, ButtonGroup, styled } from '@mui/material'
 import banner from '@assets/images/Banner.png'
 import event from '@assets/images/Event_1.png'
 import experian from '@assets/images/Experian.png'
@@ -10,85 +11,11 @@ import en_image from '@assets/images/language_en.svg'
 import ind_image from '@assets/images/language_ind.svg'
 import './index.scss'
 
-interface HomeData{
-  subTitle: string,
-  tip1_1: string,
-  tip1_2: string,
-  tip2Start: string,
-  tip2Text: string,
-  tip2Link: string,
-  tip2End: string,
-  tip3Start: string,
-  tip3Text: string,
-  tip3Link: string,
-  tip3End: string,
-  termsTip: string,
-  primaryButton: string,
-  surveyButton: string,
-  termsAndConditions: string
-}
-
 function Home() {
   const { t, i18n } = useTranslation();
-
   const navigate = useNavigate();
   const [isOpenTerms, setIsOpenTerms] = useState<boolean>(false);
   const homeData: HomeData[] = t('home');
-
-  //自定义的按钮
-  const CustomButton = styled(Button)({
-    boxShadow: 'none',
-    textTransform: 'none',
-    fontSize: 16,
-    height: '35px',
-    width: '335',
-    padding: '20px',
-    border: '1px solid #8ab819',
-    lineHeight: 1.5,
-    backgroundColor: '#8ab819',
-    borderColor: '#8ab819 !important',
-    '&:hover': {
-        backgroundColor: '#8ab819',
-    },
-    '&:active': {
-        backgroundColor: '#8ab819',
-    }
-  });
-
-  const LanguageButton = styled(Button)({
-    boxShadow: 'none',
-    textTransform: 'none',
-    fontSize: 16,
-    height: '35px',
-    width: '335',
-    padding: '20px',
-    border: '1px solid rgb(126, 34, 92)',
-    lineHeight: 1.5,
-    backgroundColor: 'rgb(126, 34, 92)',
-    '&:hover': {
-        backgroundColor: 'rgb(126, 34, 92)',
-    },
-    '&:active': {
-        backgroundColor: 'rgb(126, 34, 92)',
-    }
-  });
-
-  const OutlinedButton = styled(Button)({
-    boxShadow: 'none',
-    textTransform: 'none',
-    fontSize: 16,
-    height: '35px',
-    width: '335',
-    padding: '20px',
-    border: '1px solid rgb(126, 34, 92)',
-    lineHeight: 1.5,
-    color: 'rgb(126, 34, 92)',
-    borderColor: 'rgb(126, 34, 92) !important'
-  })
-
-  const go = (url:string) => {
-    navigate(url);
-  }
 
   const toggleLanguage = () => {
     if(i18n.language === "en"){
@@ -129,7 +56,7 @@ function Home() {
                 &nbsp;{item.tip3End}
               </Typography>
               <ButtonGroup orientation="vertical" variant="contained" sx={{ marginTop: '20px' }}>
-                <CustomButton variant="contained" onClick={() => go('/win')}> {item.primaryButton} </CustomButton>
+                <CustomButton variant="contained" onClick={() => navigate('/win')}> {item.primaryButton} </CustomButton>
                 <OutlinedButton variant="outlined" color="primary" sx={{ marginTop: '10px', width: '335px' }}>
                   <a href="https://docs.google.com/forms/d/11eDM3OgSfhP35aNkpX1gT77nMj-u9Rb8nsfLv1du09M/closedform" target="_blank" style={{ color: 'rgb(126, 34, 92)' }}>
                     {item.surveyButton}
