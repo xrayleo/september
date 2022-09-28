@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet,useNavigate } from 'react-router-dom'
 import { Box, AppBar, Toolbar, Typography, ThemeProvider, createTheme, IconButton, useMediaQuery } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import SwipeableTemporaryDrawer from '@components/drawer'
 import logo from '@assets/images/logo.png'
 
 function App() {
+  const navigate = useNavigate();
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
 
   const showDrawer = () => {
@@ -34,7 +35,7 @@ function App() {
           >
             <MenuIcon/>
           </IconButton>
-          <Typography component="div" variant="h6" sx={{ display: 'flex', width: '110px',justifyContent: 'center', cursor: 'pointer' }}>
+          <Typography component="div" variant="h6" onClick={ () => navigate("/")  } sx={{ display: 'flex', width: '110px',justifyContent: 'center', cursor: 'pointer',boxSizing: 'content-box',padding: '8px'}}>
             <img src={logo} alt="logo" className="w-full" />
           </Typography>
       </Toolbar>
