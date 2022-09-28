@@ -12,7 +12,8 @@ import { useTranslation } from 'react-i18next'
 
 interface HomeData{
   subTitle: string,
-  tip1: string,
+  tip1_1: string,
+  tip1_2: string,
   tip2Start: string,
   tip2Text: string,
   tip2Link: string,
@@ -112,7 +113,10 @@ function Home() {
             </Stack>
             <Stack className="home" direction="column" justifyContent="center" alignItems="center" sx={{ paddingTop: '20px' }}>
               <Typography variant="h3" component="h3" sx={{ marginTop: '5px', color: 'rgb(92, 92, 92)', fontSize: '18.7px', fontWeight: '700', width: '84%', textAlign: 'center' }}>
-                {item.tip1}
+                {item.tip1_1}
+              </Typography>
+              <Typography variant="h3" component="p" sx={{ marginTop: '5px', color: 'rgb(92, 92, 92)', fontSize: '18.7px', fontWeight: '700', width: '84%', textAlign: 'center' }}>
+                {item.tip1_2}
               </Typography>
               <Typography variant="h6" component="p" sx={{ marginTop: '5px', color: 'rgb(92, 92, 92)', fontSize: '16px', fontWeight: '500', width: '84%', textAlign: 'center', lineHeight: '1.5rem' }}>
                 {item.tip2Start}&nbsp;

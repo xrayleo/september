@@ -7,7 +7,8 @@
     "home": [
         {
             "subTitle": "Kuis Online Literasi Finansial",
-            "tip1": "Selamat kepada semua pemenang! Semua pemenang telah dihubungi melalui email terdaftar. Terima kasih sekali lagi atas partisipasi Anda! ",
+            "tip1_1": "Selamat kepada semua pemenang! Semua pemenang telah dihubungi melalui email terdaftar. ",
+            "tip1_2": "Terima kasih sekali lagi atas partisipasi Anda! ",
             "tip2Start": "Mohon untuk mengisi",
             "tip2Text": "survey",
             "tip2Link": "https://tinyurl.com/WinitforFinLitFeedback",

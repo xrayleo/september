@@ -7,7 +7,8 @@
     "home": [
         {
             "subTitle": "Online Financial Literacy Quiz",
-            "tip1": "Congratulations to all the winners! All winners have been contacted by registered email. Thank you again for your participation!",
+            "tip1_1": "Congratulations to all the winners! All winners have been contacted by registered email.",
+            "tip1_2": "Thank you again for your participation!",
             "tip2Start": "Please fill out this ",
             "tip2Text": "survey",
             "tip2Link": "https://tinyurl.com/WinitforFinLitFeedback",
