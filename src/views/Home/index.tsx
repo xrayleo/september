@@ -114,14 +114,14 @@ function Home() {
               </Typography>
               <Typography variant="h6" component="p" sx={{ marginTop: '5px', color: 'rgb(92, 92, 92)', fontSize: '16px', fontWeight: '500', width: '84%', textAlign: 'center', lineHeight: '1.5rem' }}>
                 {item.tip2Start}
-                <a href={t('tip2Link')} target="_blank" className="tip-link">
+                <a href={item.tip2Link}target="_blank" className="tip-link">
                   {item.tip2Link}
                 </a>
                 {item.tip2End}
               </Typography>
               <Typography variant="h6" component="p" sx={{ marginTop: '5px', color: 'rgb(92, 92, 92)', fontSize: '16px', fontWeight: '500', width: '84%', textAlign: 'center', lineHeight: '1.5rem' }}>
                 {item.tip3Start}
-                <a href={t('tip3Link')} target="_blank" className="tip-link">
+                <a href={item.tip3Link} target="_blank" className="tip-link">
                   {item.tip3Link}
                 </a>
                 {item.tip3Start}
