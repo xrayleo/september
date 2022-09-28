@@ -117,16 +117,16 @@ function Home() {
               <Typography variant="h6" component="p" sx={{ marginTop: '5px', color: 'rgb(92, 92, 92)', fontSize: '16px', fontWeight: '500', width: '84%', textAlign: 'center', lineHeight: '1.5rem' }}>
                 {item.tip2Start}&nbsp;
                 <a href={item.tip2Link}target="_blank" className="tip-link">
-                  {item.tip2Text}&nbsp;
+                  {item.tip2Text}
                 </a>
-                {item.tip2End}
+                &nbsp;{item.tip2End}
               </Typography>
               <Typography variant="h6" component="p" sx={{ marginTop: '5px', color: 'rgb(92, 92, 92)', fontSize: '16px', fontWeight: '500', width: '84%', textAlign: 'center', lineHeight: '1.5rem' }}>
                 {item.tip3Start}
                 <a href={item.tip3Link} target="_blank" className="tip-link">
-                  {item.tip3Text}&nbsp;
+                  {item.tip3Text}
                 </a>
-                {item.tip3End}
+                &nbsp;{item.tip3End}
               </Typography>
               <ButtonGroup orientation="vertical" variant="contained" sx={{ marginTop: '20px' }}>
                 <CustomButton variant="contained" onClick={() => go('/win')}> {item.primaryButton} </CustomButton>

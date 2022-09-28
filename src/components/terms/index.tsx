@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Box, Modal, Stack, Typography } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { useTranslation } from "react-i18next";
+import "./index.scss";
 
 const style = {
     position: "absolute" as "absolute",
@@ -33,7 +34,7 @@ export default function TermsModal(props: {
                     <Stack alignItems="end" sx={{ transition: "translateX(10px)",zIndex: "100" }}>
                         <CloseIcon sx={{color: "rgb(126, 34, 92)",fontSize: "1.8rem",cursor: "pointer"}} onClick={() => props.onTerms(false)}/>
                     </Stack>
-                    <div dangerouslySetInnerHTML={{__html: props.termDetails}}></div>
+                    <div dangerouslySetInnerHTML={{__html: props.termDetails}} className="term-box"></div>
                     {/* <Typography fontWeight="bold" marginTop="15px" variant="h5" component="h3">Syarat dan Ketentuan</Typography>
                     <Typography sx={{mt: 2,textDecoration: "underline",lineHeight: "1.3rem",fontSize: "1.2rem",}}>TIDAK PERLU PEMBELIAN UNTUK MENGIKUTI ATAU MENANG.</Typography>
                     <Typography marginTop="16px" fontWeight="bold" fontSize="1.2rem" lineHeight="1.3">
