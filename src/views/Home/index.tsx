@@ -14,9 +14,11 @@ interface HomeData{
   subTitle: string,
   tip1: string,
   tip2Start: string,
+  tip2Text: string,
   tip2Link: string,
   tip2End: string,
   tip3Start: string,
+  tip3Text: string,
   tip3Link: string,
   tip3End: string,
   termsTip: string,
@@ -113,18 +115,18 @@ function Home() {
                 {item.tip1}
               </Typography>
               <Typography variant="h6" component="p" sx={{ marginTop: '5px', color: 'rgb(92, 92, 92)', fontSize: '16px', fontWeight: '500', width: '84%', textAlign: 'center', lineHeight: '1.5rem' }}>
-                {item.tip2Start}
+                {item.tip2Start}&nbsp;
                 <a href={item.tip2Link}target="_blank" className="tip-link">
-                  {item.tip2Link}
+                  {item.tip2Text}&nbsp;
                 </a>
                 {item.tip2End}
               </Typography>
               <Typography variant="h6" component="p" sx={{ marginTop: '5px', color: 'rgb(92, 92, 92)', fontSize: '16px', fontWeight: '500', width: '84%', textAlign: 'center', lineHeight: '1.5rem' }}>
                 {item.tip3Start}
                 <a href={item.tip3Link} target="_blank" className="tip-link">
-                  {item.tip3Link}
+                  {item.tip3Text}&nbsp;
                 </a>
-                {item.tip3Start}
+                {item.tip3End}
               </Typography>
               <ButtonGroup orientation="vertical" variant="contained" sx={{ marginTop: '20px' }}>
                 <CustomButton variant="contained" onClick={() => go('/win')}> {item.primaryButton} </CustomButton>
