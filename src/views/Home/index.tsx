@@ -1,5 +1,7 @@
 import { useState, Suspense } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import Terms from '@components/terms'
 import { Box, Typography, Stack, Button, ButtonGroup, styled } from '@mui/material'
 import './index.scss'
 import banner from '@assets/images/Banner.png'
@@ -7,8 +9,6 @@ import event from '@assets/images/Event_1.png'
 import experian from '@assets/images/Experian.png'
 import en_image from '@assets/images/language_en.svg'
 import ind_image from '@assets/images/language_ind.svg'
-import Terms from '@components/terms'
-import { useTranslation } from 'react-i18next'
 
 interface HomeData{
   subTitle: string,
