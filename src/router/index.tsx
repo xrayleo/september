@@ -4,6 +4,7 @@ import About from '@views/About'
 import Help from '@views/Help'
 import Winners from '@views/Winners'
 import Index from '@/views'
+import Test from '@/views/Test'
 
 function AppRouter() {
     return (
@@ -15,6 +16,7 @@ function AppRouter() {
                     <Route path="help" element={ <Help /> }></Route>
                     <Route path="win" element={ <Winners /> }></Route>
                 </Route>
+                <Route path="test" element={ <Test /> }></Route>
             </Routes>
         </BrowserRouter>
     );

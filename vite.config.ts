@@ -18,7 +18,7 @@ export default ({ mode }) => {
                 "@service": resolve(__dirname, "src/service"),
                 "@assets": resolve(__dirname, "src/assets"),
                 "@store": resolve(__dirname, "src/store"),
-                "@interfaces": resolve(__dirname, "src/interfaces"),
+                "@hooks": resolve(__dirname, "src/hooks"),
             },
         },
         css: {
@@ -30,7 +30,7 @@ export default ({ mode }) => {
         },
         server: {
             host: "0.0.0.0",
-            port: 7087,
+            port: 7089,
             open: false,
             strictPort: false, // 如果端⼝占⽤，是退出，还是尝试其他端⼝
             https: false,

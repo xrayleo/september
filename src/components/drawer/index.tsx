@@ -1,39 +1,24 @@
-import React,{ Fragment,useState } from 'react'
-import SwipeableDrawer from '@mui/material/SwipeableDrawer'
-import { Box,List,ListItem,ListItemButton,ListItemText,Button,Container,Typography,styled } from '@mui/material'
+import React,{ Fragment } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { Box,List,ListItem,ListItemButton,ListItemText,Container,Typography,SwipeableDrawer } from '@mui/material'
+import { LanguageButton } from '@components/button'
 import CloseIcon from '@mui/icons-material/Close'
 import en_image from '@assets/images/language_en.svg'
 import ind_image from '@assets/images/language_ind.svg'
-import { useNavigate } from 'react-router-dom'
-import { useTranslation } from 'react-i18next'
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right'
 type MenuConfig = {
     text: string,
     url: string
 }
-interface DrawerArgument {
-    isOpenDrawer: boolean,
-    direction: Anchor,
-    onDrawer(): void
-}
 
 const SwipeableTemporaryDrawer = (props: {isOpenDrawer: boolean, direction: Anchor, onDrawer: any}) => {
-
     //国际化
     const { t, i18n } = useTranslation();
-    
-    // console.log(props);
     const navigator = useNavigate();
-
-    //页面路由
-    // const menuConfig: MenuConfig[] = [
-    //     { text: 'Home', url: '/'},
-    //     { text: 'About', url: '/about'},
-    //     { text: 'Help/Contact Us', url: '/help'},
-    // ]
-    // console.log( t("slideNav"));
     const menuConfig: MenuConfig[] = t("slideNav");
+    
     const toggleLanguage = () => {
         if(i18n.language === "en"){
             i18n.changeLanguage('ina');
@@ -42,26 +27,6 @@ const SwipeableTemporaryDrawer = (props: {isOpenDrawer: boolean, direction: Anch
         }
         props.onDrawer(false);
     }
-
-    // console.log(props);
-    //自定义的按钮
-    const LanguageButton = styled(Button)({
-        boxShadow: 'none',
-        textTransform: 'none',
-        fontSize: 16,
-        height: '35px',
-        width: '335',
-        padding: '20px',
-        border: '1px solid rgb(126, 34, 92)',
-        lineHeight: 1.5,
-        backgroundColor: 'rgb(126, 34, 92)',
-        '&:hover': {
-            backgroundColor: 'rgb(126, 34, 92)',
-        },
-        '&:active': {
-            backgroundColor: 'rgb(126, 34, 92)',
-        }
-    });
 
     //切换抽屉组件
     const toggleDrawer = (anchor: Anchor, open: boolean) =>
